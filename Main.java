@@ -1,6 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        MoodAnalyser mood = new MoodAnalyser("I am in a happy mood");
-        mood.analyseMood();
+        try {
+            MoodAnalyser mood = new MoodAnalyser();
+            mood.analyseMood();
+        } catch (IllegalArgumentException i) {
+            System.out.println("Illegal Argument exception is printed.");
+            System.out.println(i.getMessage());
+        }
     }
 }
